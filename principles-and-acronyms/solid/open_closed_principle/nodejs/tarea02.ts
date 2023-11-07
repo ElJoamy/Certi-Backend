@@ -36,11 +36,41 @@ class LineaAzul extends Teleferico {
     }
 }
 
+class LineaVerde extends Teleferico {
+    iniciarRecorrido(): void {
+        console.log("Iniciando recorrido de la Línea Verde");
+    }
+
+    detenerseEnEstacion(): void {
+        console.log("Deteniéndose en una estación de la Línea Verde");
+    }
+
+    finalizarRecorrido(): void {
+        console.log("Finalizando recorrido de la Línea Verde");
+    }
+}
+
+class LineaAmarilla extends Teleferico {
+    iniciarRecorrido(): void {
+        console.log("Iniciando recorrido de la Línea Amarilla");
+    }
+
+    detenerseEnEstacion(): void {
+        console.log("Deteniéndose en una estación de la Línea Amarilla");
+    }
+
+    finalizarRecorrido(): void {
+        console.log("Finalizando recorrido de la Línea Amarilla");
+    }
+}
+
 // Clase principal
 class tarea02 {
     public static main(): void {
         const lineaRoja: Teleferico = new LineaRoja();
         const lineaAzul: Teleferico = new LineaAzul();
+        const lineaVerde: Teleferico = new LineaVerde();
+        const lineaAmarilla: Teleferico = new LineaAmarilla();
 
         lineaRoja.iniciarRecorrido();
         lineaRoja.detenerseEnEstacion();
@@ -49,6 +79,14 @@ class tarea02 {
         lineaAzul.iniciarRecorrido();
         lineaAzul.detenerseEnEstacion();
         lineaAzul.finalizarRecorrido();
+
+        lineaVerde.iniciarRecorrido();
+        lineaVerde.detenerseEnEstacion();
+        lineaVerde.finalizarRecorrido();
+
+        lineaAmarilla.iniciarRecorrido();
+        lineaAmarilla.detenerseEnEstacion();
+        lineaAmarilla.finalizarRecorrido();
     }
 }
 
