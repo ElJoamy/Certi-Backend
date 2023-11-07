@@ -86,16 +86,24 @@ public class tarea02 {
         lineaRoja.detenerseEnEstacion();
         lineaRoja.finalizarRecorrido();
 
+        System.out.println();
+
         lineaAzul.iniciarRecorrido();
         lineaAzul.detenerseEnEstacion();
         lineaAzul.finalizarRecorrido();
+
+        System.out.println();
 
         lineaVerde.iniciarRecorrido();
         lineaVerde.detenerseEnEstacion();
         lineaVerde.finalizarRecorrido();
 
+        System.out.println();
+
         lineaAmarilla.iniciarRecorrido();
         lineaAmarilla.detenerseEnEstacion();
         lineaAmarilla.finalizarRecorrido();
+
+        System.out.println();
     }
 }
