@@ -14,6 +14,12 @@ class Charmander implements Catchable {
     }
 }
 
+class Lapras implements Catchable {
+    public void catchPokemon() {
+        System.out.println("Lapras fue atrapado!");
+    }
+}
+
 class Pokeball {
     private Catchable pokemon;
 
