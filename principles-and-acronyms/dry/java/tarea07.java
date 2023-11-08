@@ -29,7 +29,6 @@ class Game extends Product {
     }
 }
 
-// do the main
 class tarea07 {
     public static void main(String[] args) {
         Book book = new Book(10);
