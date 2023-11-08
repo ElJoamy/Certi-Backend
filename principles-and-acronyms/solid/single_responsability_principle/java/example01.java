@@ -2,6 +2,12 @@ class Pokemon {
     private String name;
     private String type;
     // Constructor, getters y setters
+    public String getName() {
+        return null;
+    }
+    public double getEscapeProbability() {
+        return 0;
+    }
 }
 
 interface Attacker {
