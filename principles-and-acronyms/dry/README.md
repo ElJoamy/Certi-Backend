@@ -70,7 +70,7 @@ Has heredado un proyecto de un sistema de gestión de inventario donde cada tipo
 
 Tu tarea es refactorizar el código existente para eliminar la duplicación y asegurar que la operación de cálculo de stock se implemente de una manera que siga el principio DRY.
 
-### Codigo 
+### Codigo
 
 ```java
 class Book {
