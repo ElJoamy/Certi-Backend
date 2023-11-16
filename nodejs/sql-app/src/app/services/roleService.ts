@@ -26,4 +26,17 @@ export class RoleService {
         }
         return roleResponse;
     }
+
+    //get all roles
+    async getRoles(): Promise<CreateRoleDTO[]> {
+        const roles = await this.roleRepository.findAll();
+        const rolesResponse: CreateRoleDTO[] = roles.map((role) => {
+            return {
+                id: role.id,
+                name: role.name,
+                description: role.description,
+            }
+        });
+        return rolesResponse;
+    }
 }

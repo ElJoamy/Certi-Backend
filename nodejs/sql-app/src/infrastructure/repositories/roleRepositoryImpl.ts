@@ -6,6 +6,12 @@ import { Role } from "../../domain/models/role";
 import { RoleEntity } from "../entities/roleEntity";
 
 export class RoleRepositoryImpl implements RoleRepository {
+    //gett all roles
+    async findAll(): Promise<Role[]> {
+        const roleRepository = AppDataSource.getRepository(RoleEntity);
+        const roles = await roleRepository.find();
+        return roles.map((role) => new Role(role));
+    }
     async findById(id: string): Promise<Role> {
         const roleRepository = AppDataSource.getRepository(RoleEntity);
         const role = await roleRepository.findOne({

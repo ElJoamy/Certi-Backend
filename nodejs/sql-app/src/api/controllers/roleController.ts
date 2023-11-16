@@ -38,9 +38,16 @@ export class RoleController {
         res.json(userDto);
     }
 
+    //get all roles
+    public async getRoles(req: Request, res: Response): Promise<void> {
+        const userDto = await this.roleService.getRoles();
+        res.json(userDto);
+    }
+
 
     public routes() {
         this.router.get('/:id', this.getRoleById.bind(this));
+        this.router.get('/', this.getRoles.bind(this));
         this.router.post('/', this.createRole.bind(this));
         // this.router.delete('/:userId', this.deleteUser.bind(this));
         // this.router.put('/:userId', this.updateUser.bind(this));
