@@ -7,6 +7,9 @@ import { EncryptImpl } from "../../infrastructure/utils/encrypt.jwt";
 import { AuthController } from "./authController";
 import { RoleController } from "./roleController";
 import { UserController } from "./userController";
+import { RedisCacheService } from './../../infrastructure/cache/redis.cache';
+
+const redisCacheService = new RedisCacheService();
 
 const encrypt = new EncryptImpl();
 
@@ -15,10 +18,10 @@ const roleService = new RoleService(roleRepository);
 const roleController = new RoleController(roleService);
 
 const userRepository = new UserRepositoryImpl();
-const userService = new UserService(userRepository, roleRepository);
+const userService = new UserService(userRepository, roleRepository, redisCacheService);
 const userController = new UserController(userService);
 
-const authService = new AuthService(userRepository, encrypt);
+const authService = new AuthService(userRepository, encrypt, redisCacheService);
 const authController = new AuthController(authService);
 
 const API:string = '/api';
