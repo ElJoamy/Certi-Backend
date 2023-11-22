@@ -25,7 +25,6 @@ import { EncryptImpl } from '../../infrastructure/utils/encrypt.jwt';
 import { RedisCacheService } from '../../infrastructure/cache/redis.cache';
 >>>>>>> a835975f115a8c3727601bff87a8535648678367
 
-
 const redisCacheService = new RedisCacheService();
 const encrypt = new EncryptImpl();
 const roleRepository = new RoleRepositoryImpl();
@@ -42,10 +41,12 @@ const userController = new UserController(userService);
 const authService = new AuthService(userRepository, encrypt, redisCacheService);
 const authController = new AuthController(authService);
 
-const API:string = '/api';
+export function apiRoutes(): Router {
+    const router = Router();
 
-export const routes = (server: any) => {
-    server.use(`${API}/users`, userController.router);
-    server.use(`${API}/roles`, roleController.router);
-    server.use(`${API}/auth`, authController.router);
-};
+    router.use('/users', userController.router);
+    router.use('/roles', roleController.router);
+    router.use('/auth', authController.router);
+
+    return router;
+}
