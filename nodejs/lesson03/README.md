@@ -153,7 +153,7 @@ export class UserController {
 # 5. Integración y Punto de Entrada
 Finalmente, integra todo en tu index.ts y configura tu servidor Express.
 
-```
+```ts
 import express, { Request, Response } from 'express';
 import { AppDataSource } from "./infrastructure/config/dataSource";
 import { UserService } from './app/services/userService';
